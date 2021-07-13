@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-palabras-contar-repeticiones
+spec:
+  selector:
+    matchLabels:
+      app: api-palabras-contar-repeticiones
+  template:
+    metadata:
+      labels:
+        app: api-palabras-contar-repeticiones
+    spec:
+      containers:
+      - name: api-palabras-contar-repeticiones
+        image: servidor.azurecr.io/api-palabras-contar-repeticiones
+        ports:
+        - containerPort: 80
